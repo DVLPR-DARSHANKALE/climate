@@ -107,58 +107,60 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            fit: BoxFit.cover,
-            image: AssetImage(
-              Assets.bg,
+      body: SingleChildScrollView(
+        child: Container(
+          width: double.infinity,
+          // height: double.infinity,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              fit: BoxFit.cover,
+              image: AssetImage(
+                Assets.bg,
+              ),
             ),
+            gradient: AppColors.bgGrident,
           ),
-          gradient: AppColors.bgGrident,
-        ),
-        child: Column(
-          children: [
-            SizedBox(height: 98.h),
-            Text(
-              "Montreal",
-              style: TextStyle(fontSize: 34.sp, color: Colors.white),
-            ),
-            SizedBox(
-              child: Text(
-                "19℃",
+          child: Column(
+            children: [
+              SizedBox(height: 98.h),
+              Text(
+                "Montreal",
+                style: TextStyle(fontSize: 34.sp, color: Colors.white),
+              ),
+              SizedBox(
+                child: Text(
+                  "19℃",
+                  style: TextStyle(
+                      fontSize: 85.sp,
+                      color: Colors.white,
+                      fontFamily: Typo.thin),
+                ),
+              ),
+              SizedBox(height: 12.h),
+              Text(
+                "Mostly Clear",
                 style: TextStyle(
-                    fontSize: 85.sp,
-                    color: Colors.white,
-                    fontFamily: Typo.thin),
+                  fontSize: 20.sp,
+                  color: AppColors.labelDarkSecondary,
+                  fontFamily: Typo.semibold,
+                ),
               ),
-            ),
-            SizedBox(height: 12.h),
-            Text(
-              "Mostly Clear",
-              style: TextStyle(
-                fontSize: 20.sp,
-                color: AppColors.labelDarkSecondary,
-                fontFamily: Typo.semibold,
+              SizedBox(height: 23.h),
+              Text(
+                "H:24  L:18",
+                style: TextStyle(
+                  fontSize: 20.sp,
+                  color: Colors.white,
+                  fontFamily: Typo.semibold,
+                ),
               ),
-            ),
-            SizedBox(height: 23.h),
-            Text(
-              "H:24  L:18",
-              style: TextStyle(
-                fontSize: 20.sp,
-                color: Colors.white,
-                fontFamily: Typo.semibold,
-              ),
-            ),
-            Image.asset(
-              Assets.house,
-              width: 390.w,
-              height: 390.w,
-            )
-          ],
+              Image.asset(
+                Assets.house,
+                width: 390.w,
+                height: 390.w,
+              )
+            ],
+          ),
         ),
       ),
     );
@@ -166,7 +168,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   SizedBox WeeklyWeather() {
     return SizedBox(
-      height: 146.h,
+      height: 200.h,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: 10,
@@ -214,7 +216,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   SizedBox hourlyWeather() {
     return SizedBox(
-      height: 146.h,
+      height: 200.h,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: 10,
